@@ -324,11 +324,11 @@ public class RocksdbGraphDatabase implements GraphDatabase {
         byte[] data;
         try (ReadOptions ro = new ReadOptions()) {
             final RocksDB db = dbRef.db();
-            if (batch == null) {
+            //if (batch == null) {
                 data = db.get(key);
-            } else {
-                data = batch.getFromBatchAndDB(db, ro, key);
-            }
+            //} else {
+            //    data = batch.getFromBatchAndDB(db, ro, key);
+            //}
         } catch (RocksDBException e) {
             throw propagate(e);
         }
